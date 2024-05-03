@@ -17,3 +17,5 @@
    4. Summarization
       1. Create folder name using cluster & T5
    5. Fine-Tune DeBERTaV3 model to detect NSFW
+3. Architecture Requirements
+   1. Stream data from file explorers to models to speed up sorting
