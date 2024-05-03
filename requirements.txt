@@ -1,2 +1,10 @@
 # ENV set up
 python-dotenv
+
+# util
+pyfunctional
+
+# model
+torch
+transformers
+sentencepiece
