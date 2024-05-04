@@ -62,7 +62,7 @@ def load_model():
             if average_block_confidence > 0.6:
                 all_lines.append(line_tmp)
 
-        return all_lines
+        return (image_path, all_lines)
     return eval
 
 text_extraction_worker: Callable[[], Tuple[Connection, Connection, Process]] = model_loop(load_model)
