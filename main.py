@@ -26,4 +26,7 @@ def get_roots() -> List[str]:
     )
 
 if __name__ == "__main__":
-    print(all_files(*get_roots()))
+    _p, file_stream = all_files(*get_roots())
+
+    while _p.is_alive():
+        print(file_stream.recv())
