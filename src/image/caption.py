@@ -26,7 +26,6 @@ def load_model():
         torch_dtype=torch.float16,
     )
 
-    model.to(device)
     def eval(image_path: str) -> str:
         img: Image = Image.open(image_path)
 
@@ -39,25 +38,3 @@ def load_model():
     return eval
 
 caption_worker: Callable[[], Tuple[Connection, Connection, Process]] = model_loop(load_model)
-#     input_recv, input_sender = Pipe(duplex=False)
-#     output_recv, output_sender = Pipe(duplex=False)
-
-#     process = Process(
-#         target=captioning_loop,
-#         args=[input_recv, output_sender]
-#     )
-
-#     process.start()
-
-#     return (input_sender, output_recv, process)
-# def captioning_loop(input_recv: Connection, output_sender: Connection):
-#     model = load_model()
-
-#     while True:
-#         path = input_recv.recv()
-#         output_sender.send((
-#             path,
-#             model(
-#                 path
-#             )
-#         ))
