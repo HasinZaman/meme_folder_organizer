@@ -15,3 +15,6 @@ sentencepiece
 # qunatizer
 accelerate
 bitsandbytes
+
+# Document text extraction
+python-doctr

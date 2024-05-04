@@ -7,6 +7,7 @@ from functional import seq
 
 from src.file_explorer import all_files, Img, Video
 from src.image.caption import caption_worker
+from src.image.text_extraction import text_extraction_worker
 
 def get_roots() -> List[str]:
     """
@@ -29,9 +30,7 @@ def get_roots() -> List[str]:
 if __name__ == "__main__":
     _p, file_stream = all_files(*get_roots())
     
-    print("loading model")
-    c_i, c_o, c_p = caption_worker()
-    print("model loaded")
+    c_i, c_o, c_p = text_extraction_worker()
 
     i = 0
 
@@ -43,7 +42,6 @@ if __name__ == "__main__":
                 print(c_o.recv())
                 i+=1
                 if i > 3:
-                    _p.kill()
                     c_p.kill()
                     break
             case Video(path):
