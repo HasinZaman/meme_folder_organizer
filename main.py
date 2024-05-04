@@ -5,7 +5,8 @@ import os
 
 from functional import seq
 
-from src.file_explorer import all_files
+from src.file_explorer import all_files, Img, Video
+from src.image.caption import caption_worker
 
 def get_roots() -> List[str]:
     """
@@ -27,6 +28,23 @@ def get_roots() -> List[str]:
 
 if __name__ == "__main__":
     _p, file_stream = all_files(*get_roots())
+    
+    print("loading model")
+    c_i, c_o, c_p = caption_worker()
+    print("model loaded")
+
+    i = 0
 
     while _p.is_alive():
-        print(file_stream.recv())
+        match file_stream.recv():
+            case Img(path):
+                print(f"img: {path}")
+                c_i.send(path)
+                print(c_o.recv())
+                i+=1
+                if i > 3:
+                    _p.kill()
+                    c_p.kill()
+                    break
+            case Video(path):
+                pass

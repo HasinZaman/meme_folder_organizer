@@ -6,5 +6,12 @@ pyfunctional
 
 # model
 torch
+torchvision
 transformers
+
+# text tokenizer
 sentencepiece
+
+# qunatizer
+accelerate
+bitsandbytes
