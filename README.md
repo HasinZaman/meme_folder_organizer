@@ -4,7 +4,7 @@
    1. Img
       1. Extract caption using Blip ✅
       2. Extract all text using doctr ✅
-      3. Get caption embedding & img embedding
+      3. Get caption embedding & img embedding sentence-Bert ✅
       4. Classify text & image based on nsfw filter
    2. Video
       1. Extract key frames from video
