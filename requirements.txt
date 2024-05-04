@@ -4,9 +4,11 @@ python-dotenv
 # util
 pyfunctional
 
-# model
+# torch
 torch
 torchvision
+
+# hugging face stuff
 transformers
 
 # text tokenizer
@@ -18,3 +20,6 @@ bitsandbytes
 
 # Document text extraction
 python-doctr
+
+#embedding
+sentence-transformers

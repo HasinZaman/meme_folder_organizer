@@ -1,8 +1,6 @@
 from typing import List, Tuple, Set
 import os
 
-from dataclasses import dataclass
-
 from threading import Thread
 
 from multiprocessing import Process, Pipe
@@ -10,16 +8,10 @@ from multiprocessing.connection import Connection
 
 from functional import seq
 
+from src.util.input_wrapper import Img, Video
 
 IMG_EXT: Set[str] = set(["png", "jpg", "jpeg"])
 VIDEO_EXT: Set[str] = set(["mp4", "avi", "mov"])
-
-@dataclass
-class Img:
-    path: str
-@dataclass
-class Video:
-    path: str
 
 def all_files(*root_dirs: str) -> Tuple[Thread, Connection]:
     output_recv, output_sender = Pipe(duplex=False)
