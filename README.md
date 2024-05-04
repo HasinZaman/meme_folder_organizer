@@ -2,8 +2,8 @@
 1. Create a queue of of all files ✅
 2. Analysis memes
    1. Img
-      1. Extract caption using Blip
-      2. Extract all text using
+      1. Extract caption using Blip ✅
+      2. Extract all text using doctr ✅
       3. Get caption embedding & img embedding
       4. Classify text & image based on nsfw filter
    2. Video
