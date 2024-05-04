@@ -1,5 +1,5 @@
 # TODO List
-1. Create a queue of of all files
+1. Create a queue of of all files ✅
 2. Analysis memes
    1. Img
       1. Extract caption using Blip
